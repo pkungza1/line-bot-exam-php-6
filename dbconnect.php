@@ -1,5 +1,5 @@
 <?php  
-$mysqli = new mysqli("http://127.0.0.1/phpmyadmin/tbl_structure.php?server=1&db=arduino&table=temp", "root","","arduino");  
+$mysqli = new mysqli("localhost/phpmyadmin/index.php", "root","","arduino");  
 /* check connection */
 if ($mysqli->connect_errno) {  
     printf("Connect failed: %s\n", $mysqli->connect_error);  
