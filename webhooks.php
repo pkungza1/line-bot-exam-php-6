@@ -1,4 +1,6 @@
 <?php
+// ถ้ามีการใช้งาน session อย่าลืมเปิดใช้งาน session_start()
+ session_start();
 // กรณีต้องการตรวจสอบการแจ้ง error ให้เปิด 3 บรรทัดล่างนี้ให้ทำงาน กรณีไม่ ให้ comment ปิดไป
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
