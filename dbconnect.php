@@ -1,6 +1,11 @@
-<?php
-$host = "http://localhost/phpmyadmin/sql.php?db=arduino&goto=db_structure.php&table=temp&pos=0";
-$username = "root";
-$password = "12345678";
-mysql_connect($host,$username,$password);
-?>
+<?php  
+$mysqli = new mysqli("localhost", "root","","temp");  
+/* check connection */
+if ($mysqli->connect_errno) {  
+    printf("Connect failed: %s\n", $mysqli->connect_error);  
+    exit();  
+}  
+if(!$mysqli->set_charset("utf8")) {  
+    printf("Error loading character set utf8: %s\n", $mysqli->error);  
+    exit();  
+}
