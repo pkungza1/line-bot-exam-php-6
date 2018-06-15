@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
  
 // กรณีมีการเชื่อมต่อกับฐานข้อมูล
-require_once("dbconnect.php");
+require_once('dbconnect.php');
  
 $accToken = "VttnYUdgUo5l1mjHOzYfHYIxg2vCAIHMHMhur1dZ2xp";
 $notifyURL = "https://notify-api.line.me/api/notify";
