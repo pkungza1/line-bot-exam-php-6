@@ -1,5 +1,5 @@
 <?php  
-$mysqli = new mysqli("http://127.0.0.1/line-bot-exam-php-6-master/webhooks.php", "root","","arduino");  
+$mysqli = new mysqli("127.0.0.1", "root","","arduino");  
 /* check connection */
 if ($mysqli->connect_errno) {  
     printf("Connect failed: %s\n", $mysqli->connect_error);  
