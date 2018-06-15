@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 // กรณีมีการเชื่อมต่อกับฐานข้อมูล
 //require_once("dbconnect.php");
  
-$accToken = "กรอก access token ของเรา ";
+$accToken = "VttnYUdgUo5l1mjHOzYfHYIxg2vCAIHMHMhur1dZ2xp";
 $notifyURL = "https://notify-api.line.me/api/notify";
  
 $headers = array(
