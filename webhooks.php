@@ -203,7 +203,7 @@ if(!is_null($events)){
                             )
                         );              
                         break;                                          
-                    case "p":
+                    case "สวัสดี":
                             if(!is_null($groupId) || !is_null($roomId)){
                                 if($eventObj->isGroupEvent()){
                                     $response = $bot->getGroupMemberProfile($groupId, $userId);
@@ -220,7 +220,7 @@ if(!is_null($events)){
                                 // $userData['displayName']
                                 // $userData['pictureUrl']
                                 // $userData['statusMessage']
-                                $textReplyMessage = 'สวัสดีครับ คุณ '.$userData['displayName'];     
+                                $textReplyMessage = 'สวัสดีครับ มีอะไรให้รับใช้ครับเจ้านาย';     
                             }else{
                                 $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
                             }
