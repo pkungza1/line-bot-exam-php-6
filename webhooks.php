@@ -1,10 +1,4 @@
 <?php
-header("content-type:application/json");
-	$jsondata= file_get_contents("https://commember14.000webhostapp.com/show1.php");
-	//echo $jsondata
-  
-  
-  
 // กรณีต้องการตรวจสอบการแจ้ง error ให้เปิด 3 บรรทัดล่างนี้ให้ทำงาน กรณีไม่ ให้ comment ปิดไป
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -249,7 +243,7 @@ if(!is_null($events)){
                                 // $userData['displayName']
                                 // $userData['pictureUrl']
                                 // $userData['statusMessage']
-                                $textReplyMessage = 'สวัสดีครับ คุณ '.$jsondata;     
+                                $textReplyMessage = 'สวัสดีครับ คุณ '.$jsondata['id'];     
                             }else{
                                 $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
                             }
