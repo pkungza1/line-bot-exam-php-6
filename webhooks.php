@@ -248,8 +248,77 @@ if(!is_null($events)){
                                 $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
                             }
                             $replyData = new TextMessageBuilder($textReplyMessage);                                                 
+                        break;
+                        case "อุณหภูมิ":
+                            if(!is_null($groupId) || !is_null($roomId)){
+                                if($eventObj->isGroupEvent()){
+                                    $response = $bot->getGroupMemberProfile($groupId, $userId);
+                                }
+                                if($eventObj->isRoomEvent()){
+                                    $response = $bot->getRoomMemberProfile($roomId, $userId);    
+                                }
+                            }else{
+                                $response = $bot->getProfile($userId);
+                            }
+                            if ($response->isSucceeded()) {
+                                $userData = $response->getJSONDecodedBody(); // return array     
+                                // $userData['userId']
+                                // $userData['displayName']
+                                // $userData['pictureUrl']
+                                // $userData['statusMessage']
+                                $textReplyMessage = 'วันที่' .' ' .$objResult['date'] .' ' .'มีอุณหภูมิ' .' ' .$objResult['id'] .' ' .'องศาเซลเซียส' .' ' .'มีความชื้น' .' ' .$objResult['humidity'] .' ' .'RH';     
+                            }else{
+                                $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
+                            }
+                            $replyData = new TextMessageBuilder($textReplyMessage);                                                 
+                        break;      
+                        case "ความชื้น":
+                            if(!is_null($groupId) || !is_null($roomId)){
+                                if($eventObj->isGroupEvent()){
+                                    $response = $bot->getGroupMemberProfile($groupId, $userId);
+                                }
+                                if($eventObj->isRoomEvent()){
+                                    $response = $bot->getRoomMemberProfile($roomId, $userId);    
+                                }
+                            }else{
+                                $response = $bot->getProfile($userId);
+                            }
+                            if ($response->isSucceeded()) {
+                                $userData = $response->getJSONDecodedBody(); // return array     
+                                // $userData['userId']
+                                // $userData['displayName']
+                                // $userData['pictureUrl']
+                                // $userData['statusMessage']
+                                $textReplyMessage = 'วันที่' .' ' .$objResult['date'] .' ' .'มีอุณหภูมิ' .' ' .$objResult['id'] .' ' .'องศาเซลเซียส' .' ' .'มีความชื้น' .' ' .$objResult['humidity'] .' ' .'RH';     
+                            }else{
+                                $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
+                            }
+                            $replyData = new TextMessageBuilder($textReplyMessage);                                                 
+                        break;
+                        case "อากาศ":
+                            if(!is_null($groupId) || !is_null($roomId)){
+                                if($eventObj->isGroupEvent()){
+                                    $response = $bot->getGroupMemberProfile($groupId, $userId);
+                                }
+                                if($eventObj->isRoomEvent()){
+                                    $response = $bot->getRoomMemberProfile($roomId, $userId);    
+                                }
+                            }else{
+                                $response = $bot->getProfile($userId);
+                            }
+                            if ($response->isSucceeded()) {
+                                $userData = $response->getJSONDecodedBody(); // return array     
+                                // $userData['userId']
+                                // $userData['displayName']
+                                // $userData['pictureUrl']
+                                // $userData['statusMessage']
+                                $textReplyMessage = 'วันที่' .' ' .$objResult['date'] .' ' .'มีอุณหภูมิ' .' ' .$objResult['id'] .' ' .'องศาเซลเซียส' .' ' .'มีความชื้น' .' ' .$objResult['humidity'] .' ' .'RH';     
+                            }else{
+                                $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
+                            }
+                            $replyData = new TextMessageBuilder($textReplyMessage);                                                 
                         break;                          
-                    case "l": // เงื่อนไขทดสอบถ้ามีใครพิมพ์ L ใน GROUP / ROOM แล้วให้ bot ออกจาก GROUP / ROOM
+                    /*case "l": // เงื่อนไขทดสอบถ้ามีใครพิมพ์ L ใน GROUP / ROOM แล้วให้ bot ออกจาก GROUP / ROOM
                             $sourceId = $eventObj->getEventSourceId();
                             if($eventObj->isGroupEvent()){
                                 $bot->leaveGroup($sourceId);
@@ -265,7 +334,7 @@ if(!is_null($events)){
                         $replyData = new TextMessageBuilder($textReplyMessage);         
                         break;                                      
                 }
-                break;                                                  
+                break;*/                                                  
             default:
                 // กรณีทดสอบเงื่อนไขอื่นๆ ผู้ใช้ไม่ได้ส่งเป็นข้อความ
                 $textReplyMessage = 'สวัสดีครับ คุณ '.$typeMessage;         
