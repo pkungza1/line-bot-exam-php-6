@@ -243,7 +243,7 @@ if(!is_null($events)){
                                 // $userData['displayName']
                                 // $userData['pictureUrl']
                                 // $userData['statusMessage']
-                                $textReplyMessage = 'สวัสดีครับ คุณ $objResult['id']." ";     
+                                $textReplyMessage = 'สวัสดีครับ คุณ'.$objResult['id'].' ';     
                             }else{
                                 $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
                             }
