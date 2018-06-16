@@ -259,13 +259,13 @@ if(!is_null($events)){
                             }                                               
                             $textReplyMessage = 'เชิญ bot ออกจาก Group / Room'; 
                             $replyData = new TextMessageBuilder($textReplyMessage);                                                 
-                        break;                                                                                                                                                                                                                                                                      
+                        break;*/                                                                                                                                                                                                                                                                      
                     default:
                         $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
                         $replyData = new TextMessageBuilder($textReplyMessage);         
                         break;                                      
                 }
-                break;*/                                                  
+                break;                                                
             default:
                 // กรณีทดสอบเงื่อนไขอื่นๆ ผู้ใช้ไม่ได้ส่งเป็นข้อความ
                 $textReplyMessage = 'สวัสดีครับ คุณ '.$typeMessage;         
