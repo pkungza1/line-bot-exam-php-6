@@ -1,18 +1,4 @@
 <?php
-
-            $objConnect = mysql_connect("localhost","id6206174_root","4ko6r'LN") or die("Error Connect to Database");
-            $objDB = mysql_select_db("id6206174_arduino");
-            $strSQL = "SELECT * FROM temp";
-            $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
-        $result = mysql_query("SELECT id FROM temp ORDER BY id DESC LIMIT 1;");
-					$row = mysql_fetch_array($result);
-					echo $row["id"];
-
-
-
-
-
-
 // กรณีต้องการตรวจสอบการแจ้ง error ให้เปิด 3 บรรทัดล่างนี้ให้ทำงาน กรณีไม่ ให้ comment ปิดไป
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
