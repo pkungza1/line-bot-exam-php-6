@@ -317,7 +317,30 @@ if(!is_null($events)){
                                 $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
                             }
                             $replyData = new TextMessageBuilder($textReplyMessage);                                                 
-                        break;                          
+                        break;
+                        case "พี":
+                            if(!is_null($groupId) || !is_null($roomId)){
+                                if($eventObj->isGroupEvent()){
+                                    $response = $bot->getGroupMemberProfile($groupId, $userId);
+                                }
+                                if($eventObj->isRoomEvent()){
+                                    $response = $bot->getRoomMemberProfile($roomId, $userId);    
+                                }
+                            }else{
+                                $response = $bot->getProfile($userId);
+                            }
+                            if ($response->isSucceeded()) {
+                                $userData = $response->getJSONDecodedBody(); // return array     
+                                // $userData['userId']
+                                // $userData['displayName']
+                                // $userData['pictureUrl']
+                                // $userData['statusMessage']
+                                $textReplyMessage = 'ท่านเทพบุตมาเกิด หน้าตาดีแท้หล่อสุด'; 
+                            }else{
+                                $textReplyMessage = 'สวัสดีครับ คุณคือใคร';
+                            }
+                            $replyData = new TextMessageBuilder($textReplyMessage);                                                 
+                        break;                         
                     /*case "l": // เงื่อนไขทดสอบถ้ามีใครพิมพ์ L ใน GROUP / ROOM แล้วให้ bot ออกจาก GROUP / ROOM
                             $sourceId = $eventObj->getEventSourceId();
                             if($eventObj->isGroupEvent()){
