@@ -5,8 +5,8 @@ header("content-type:application/json");
 //echo $jsondata
 
 // Read JSON Decode //
-    $jsonCode = file_get_contents("https://commember14.000webhostapp.com/show1.php");
-    //$jsonCode = file_get_contents("https://api-blynk-line.herokuapp.com/show1.php");
+    //$jsonCode = file_get_contents("https://commember14.000webhostapp.com/show1.php");
+    $jsonCode = file_get_contents("https://api-blynk-line.herokuapp.com/show1.php");
 
 	$jsonDecode = json_decode($jsonCode, true);
 
